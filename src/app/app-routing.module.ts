@@ -6,17 +6,17 @@ import { EditComponent } from './pages/musicas/edit/edit.component';
 import { ListComponent } from './pages/musicas/list/list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/addMusica', pathMatch: 'full' },
+  { path: '', redirectTo: '/listaMusica', pathMatch: 'full' },
   { path: 'categorias', component: CategoriasComponent },
   { path: 'novaMusica', component: EditComponent },
   { path: 'listaMusica', component: ListComponent },
   { path: '**', component: Error404Component }
-  
+
 ];
 
 @NgModule({
-  exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes) ]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)]
 })
 
 export class AppRoutingModule { }
