@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Lista de Musicas</h2>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Estilo</th>
+        <th>Musica</th>
+        <th>Autor</th>
+        <th>Banda</th>
+        <th>Açoes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let musica of musicas | async">
+        <td>{{ musica.estilo }}</td>
+        <td>{{ musica.nome }}</td>
+        <td>{{ musica.autor }}</td>
+        <td>{{ musica.banda }}</td>
+        <td>
+            <button type="button" class="btn btn-primary btn-xs" (click)="edit(musica, musica.key)" routerLink="/novaMusica">Editar</button>
+            <button type="button" class="btn btn-danger btn-xs" (click)="delete(musica.key)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
